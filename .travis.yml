@@ -6,10 +6,10 @@ cache:
   directories:
     - "node_modules"
 sudo: false
-install:
-  - npm install
-script:
-  - npm test
+#install:
+#  - npm install
+#script:
+#  - npm test
 deploy:
   - provider: script
     skip_cleanup: true
