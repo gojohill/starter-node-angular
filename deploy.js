@@ -71,15 +71,15 @@ function updateRemoteApp() {
 }
 
 // restart mongodb and node services on the remote server
-function restartRemoteServices() {
+function installNPM() {
   return ssh.execCommand(
-    'cd starter-node-angular && npm install -g@latest', {
+    'cd starter-node-angular && npm install -g@latest && bower install', {
       cwd: '/home/ubuntu'
   });
 }
 
 //install npm
-function installNPM() {
+function restartRemoteServices() {
   return ssh.execCommand(
     'cd starter-node-angular && pm2 start server.js', {
       cwd: '/home/ubuntu'
@@ -138,7 +138,7 @@ function sshConnect() {
     })
     .then(function(status) {
       if (status) {
-        console.log('Restarting remote services...');
+        console.log('Install NPM in the app directory to create the node_modules directory ...');
         return installNPM();
       } else {
         return Promise.reject(failed.join(', '));

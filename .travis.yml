@@ -8,12 +8,8 @@ cache:
 sudo: false
 install:
   - npm install
-install:
-  - npm install -g bower
 script:
   - npm test
-install:
-  - bower install
 deploy:
   - provider: script
     skip_cleanup: true
