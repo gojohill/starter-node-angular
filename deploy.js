@@ -98,11 +98,11 @@ function sshConnect() {
       username: 'ubuntu',
       privateKey: 'hs-key.pem'
     })
-    .then(function() {
-      console.log('SSH Connection established.');
-      console.log('Installing PM2...');
-      return installPM2();
-    })
+    // .then(function() {
+    //   console.log('SSH Connection established.');
+    //   console.log('Installing PM2...');
+    //   return installPM2();
+    // })
     .then(function() {
       console.log('Creating `starter-node-angular-temp` folder.');
       return createRemoteTempFolder();
@@ -144,14 +144,14 @@ function sshConnect() {
     //     return Promise.reject(failed.join(', '));
     //   }
     // })
-    .then(function(status) {
-      if (status) {
-        console.log('Restarting remote services...');
-        return restartRemoteServices();
-      } else {
-        return Promise.reject(failed.join(', '));
-      }
-    })
+    // .then(function(status) {
+    //   if (status) {
+    //     console.log('Restarting remote services...');
+    //     return restartRemoteServices();
+    //   } else {
+    //     return Promise.reject(failed.join(', '));
+    //   }
+    // })
     .then(function() {
       console.log('DEPLOYMENT COMPLETE!');
       process.exit(0);
