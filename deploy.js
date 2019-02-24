@@ -139,7 +139,7 @@ function sshConnect() {
     .then(function(status) {
       if (status) {
         console.log('Install NPM in the app directory to create the node_modules directory ...');
-        return installNPM();
+        //return installNPM();
       } else {
         return Promise.reject(failed.join(', '));
       }
