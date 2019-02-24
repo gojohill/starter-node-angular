@@ -7,8 +7,8 @@ cache:
     - "node_modules"
 sudo: false
 install:
- - npm install -g @latest
- - bower install
+ - npm install
+ - npm install -g bower
 script:
 - npm test
 #deploy:
