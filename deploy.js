@@ -136,14 +136,14 @@ function sshConnect() {
         return Promise.reject(failed.join(', '));
       }
     })
-    .then(function(status) {
-      if (status) {
-        console.log('Install NPM in the app directory to create the node_modules directory ...');
-        //return installNPM();
-      } else {
-        return Promise.reject(failed.join(', '));
-      }
-    })
+    // .then(function(status) {
+    //   if (status) {
+    //     console.log('Install NPM in the app directory to create the node_modules directory ...');
+    //     //return installNPM();
+    //   } else {
+    //     return Promise.reject(failed.join(', '));
+    //   }
+    // })
     .then(function(status) {
       if (status) {
         console.log('Restarting remote services...');
