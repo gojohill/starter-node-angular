@@ -11,6 +11,8 @@ install:
   - npm install
 script:
   - npm test
+install:
+  - bower install
 deploy:
   - provider: script
     skip_cleanup: true
