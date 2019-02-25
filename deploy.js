@@ -145,14 +145,14 @@ function sshConnect() {
         return Promise.reject(failed.join(', '));
       }
     })
-    // .then(function(status) {
-    //   if (status) {
-    //     console.log('Restarting remote services...');
-    //     return restartRemoteServices();
-    //   } else {
-    //     return Promise.reject(failed.join(', '));
-    //   }
-    // })
+    .then(function(status) {
+      if (status) {
+        console.log('Restarting remote services...');
+        return restartRemoteServices();
+      } else {
+        return Promise.reject(failed.join(', '));
+      }
+    })
     .then(function() {
       console.log('DEPLOYMENT COMPLETE!');
       process.exit(0);
